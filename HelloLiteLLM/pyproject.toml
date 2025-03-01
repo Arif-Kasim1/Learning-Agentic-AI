@@ -7,11 +7,14 @@ authors = [
     { name = "Arif-Kasim", email = "arif.rozani@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "litellm>=1.61.20",
+]
 
 [project.scripts]
 hellolitellm = "hellolitellm:main"
 show = "hellolitellm:main"
+check = "hellolitellm:TestLiteLLM"
 
 [build-system]
 requires = ["hatchling"]
