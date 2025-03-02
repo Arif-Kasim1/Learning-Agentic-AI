@@ -1,0 +1,21 @@
+[project]
+name = "city-funfact-flow-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Arif-Kasim", email = "arif.rozani@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "crewai>=0.102.0",
+]
+
+[project.scripts]
+city-funfact-flow-project = "city_funfact_flow_project:main"
+check = "city_funfact_flow_project.FunFact:entry_point"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
