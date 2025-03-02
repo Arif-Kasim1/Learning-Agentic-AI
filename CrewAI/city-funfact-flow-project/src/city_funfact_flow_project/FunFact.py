@@ -11,10 +11,26 @@ class FunFact(Flow):
         print("This is a fun fact about a city")
         response = completion(
             model="gemini/gemini-1.5-flash",
-            messages=[{"role": "user", "content": "generate a random city name"}],)
+            messages=[{"role": "user", "content": "generate a random Pakistan's city name"}],)
+        
+        city = response.choices[0].message.content
+        self.city = city
 
-        print(response['choices'][0]['message']['content'])
+        print("City = ", city)
 
+    @listen(start)
+    def listen(self):
+        print("listen():")
+        print("city = ", self.city)
+        
+        response = completion(
+            model="gemini/gemini-1.5-flash",
+            messages=[{"role": "user", "content": f"generate a fun fact about city name {self.city}"}],)
+        
+        fun_fact = response.choices[0].message.content
+         
+
+        print("fun_fact = ", fun_fact)
 
 
 
