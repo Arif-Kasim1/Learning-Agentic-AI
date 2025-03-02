@@ -27,6 +27,7 @@ class FunFact(Flow):
             model="gemini/gemini-1.5-flash",
             messages=[{"role": "user", "content": f"generate a fun fact about city name {self.state["city"]}"}],)
         
+        print(type(response))
         fun_fact = response.choices[0].message.content
          
 
