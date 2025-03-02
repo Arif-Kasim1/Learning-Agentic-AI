@@ -14,18 +14,18 @@ class FunFact(Flow):
             messages=[{"role": "user", "content": "generate a random Pakistan's city name"}],)
         
         city = response.choices[0].message.content
-        self.city = city
+        self.state["city"] = city
 
         print("City = ", city)
 
     @listen(start)
     def listen(self):
         print("listen():")
-        print("city = ", self.city)
+        print("city = ", self.state["city"])
         
         response = completion(
             model="gemini/gemini-1.5-flash",
-            messages=[{"role": "user", "content": f"generate a fun fact about city name {self.city}"}],)
+            messages=[{"role": "user", "content": f"generate a fun fact about city name {self.state["city"]}"}],)
         
         fun_fact = response.choices[0].message.content
          
