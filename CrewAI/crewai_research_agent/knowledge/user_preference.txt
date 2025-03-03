@@ -1,2 +1,74 @@
-AI LLMs = Deep Seek  is number one in LLM leader board
-Karachi = Karachi is a city of Pakistan.
+P15v_Lenovo = {
+    price:800, brand:"ThinkPad", company:"Lenovo", type:"Workstation",
+    description:"The Lenovo ThinkPad P15v is a powerful workstation designed for professionals. Equipped with high-performance processors, ample RAM, and a durable chassis, it ensures seamless multitasking and reliability. Its robust build, excellent keyboard, and security features make it ideal for engineers, developers, and business users needing top-tier performance."
+}
+
+XPS_15_Dell = {
+    price:1200, brand:"XPS", company:"Dell", type:"Ultrabook",
+    description:"Dell XPS 15 is a premium ultrabook with a stunning InfinityEdge display, powerful Intel Core processors, and dedicated NVIDIA graphics. Designed for creatives and professionals, it delivers top-tier performance in a sleek aluminum body. The exceptional display, battery life, and high-end build quality make it a productivity powerhouse."
+}
+
+MacBook_Air_Apple = {
+    price:950, brand:"MacBook", company:"Apple", type:"Ultrabook",
+    description:"Apple's MacBook Air is an ultrathin, lightweight laptop powered by the M-series chip. With exceptional battery life, a Retina display, and a fanless design, it provides quiet yet powerful performance. Ideal for students and professionals, it excels in everyday tasks, video editing, and programming, with seamless macOS integration."
+}
+
+ROG_Strix_Asus = {
+    price:1500, brand:"ROG", company:"Asus", type:"Gaming",
+    description:"Asus ROG Strix is a high-performance gaming laptop with a powerful GPU, high-refresh-rate display, and advanced cooling. Designed for serious gamers, it ensures smooth gameplay with minimal lag. The RGB keyboard, bold aesthetics, and superior thermals make it an excellent choice for esports and AAA gaming experiences."
+}
+
+Ideapad_3_Lenovo = {
+    price:700, brand:"Ideapad", company:"Lenovo", type:"Budget",
+    description:"Lenovo Ideapad 3 is an affordable yet capable laptop ideal for students and home users. Featuring a decent processor, good battery life, and a compact design, it handles everyday tasks smoothly. Its lightweight build, comfortable keyboard, and budget-friendly price make it a great choice for casual computing needs."
+}
+
+Spectre_x360_HP = {
+    price:1100, brand:"Spectre", company:"HP", type:"Convertible",
+    description:"HP Spectre x360 is a premium 2-in-1 convertible laptop with a sleek aluminum chassis, powerful performance, and a stunning touchscreen display. It seamlessly switches between laptop and tablet modes, offering flexibility for work and creativity. Long battery life, pen support, and ultra-thin design make it a stylish powerhouse."
+}
+
+ZenBook_Duo_Asus = {
+    price:1300, brand:"ZenBook", company:"Asus", type:"Dual Screen",
+    description:"Asus ZenBook Duo is a revolutionary dual-screen laptop featuring the ScreenPad Plus for enhanced multitasking. Powered by high-end Intel processors and dedicated graphics, it is ideal for content creators, designers, and productivity enthusiasts. The sleek design, responsive stylus support, and ergonomic typing experience make it a creative game-changer."
+}
+
+ThinkPad_X1_Lenovo = {
+    price:1400, brand:"ThinkPad", company:"Lenovo", type:"Business",
+    description:"Lenovo ThinkPad X1 is a premium business laptop known for its durability, security, and powerful performance. With a robust build, outstanding keyboard, and lightweight design, it's ideal for professionals on the go. Its high-resolution display, long battery life, and ThinkShield security features ensure reliability in corporate environments."
+}
+
+Surface_Laptop_5_Microsoft = {
+    price:1250, brand:"Surface", company:"Microsoft", type:"Premium",
+    description:"Microsoft Surface Laptop 5 combines elegant design with powerful hardware, offering a sleek aluminum body, a vibrant PixelSense touchscreen, and excellent battery life. Designed for students and professionals, it delivers smooth performance with Windows integration. The lightweight build, premium materials, and smooth keyboard make it a top-tier productivity laptop."
+}
+
+Aspire_5_Acer = {
+    price:600, brand:"Aspire", company:"Acer", type:"Budget",
+    description:"Acer Aspire 5 is a budget-friendly laptop that balances performance and affordability. Equipped with decent hardware, a full HD display, and long battery life, it's ideal for students and casual users. Its slim, lightweight design and efficient cooling make it a reliable choice for everyday computing and entertainment."
+}
+
+Vostro_14_Dell = {
+    price:900, brand:"Vostro", company:"Dell", type:"Business",
+    description:"Dell Vostro 14 is a business laptop designed for professionals and small businesses. It offers solid performance, enhanced security features, and a lightweight design. With a full HD display, long battery life, and business-centric tools, it's a great choice for productivity, ensuring smooth workflow and seamless office operations."
+}
+
+Alienware_m15_Dell = {
+    price:2000, brand:"Alienware", company:"Dell", type:"Gaming",
+    description:"Alienware m15 is a high-end gaming laptop built for ultimate performance. Featuring powerful processors, cutting-edge NVIDIA graphics, and advanced cooling, it ensures smooth gameplay for the latest titles. The RGB lighting, high-refresh-rate display, and premium build make it a top choice for professional gamers and gaming enthusiasts."
+}
+
+Pavilion_15_HP = {
+    price:750, brand:"Pavilion", company:"HP", type:"Mid-Range",
+    description:"HP Pavilion 15 is a well-balanced laptop that delivers solid performance at a mid-range price. With a stylish design, good battery life, and a full HD display, it suits students and professionals. The comfortable keyboard, reliable performance, and decent build quality make it an excellent all-around productivity machine."
+}
+
+Yoga_9i_Lenovo = {
+    price:1050, brand:"Yoga", company:"Lenovo", type:"Convertible",
+    description:"Lenovo Yoga 9i is a premium convertible laptop with a sleek, flexible design. Featuring a high-resolution touchscreen, stylus support, and powerful hardware, it's perfect for creatives and professionals. With its 360-degree hinge, long battery life, and premium speakers, it delivers a versatile experience for both work and entertainment."
+}
+
+Razer_Blade_14_Razer = {
+    price:1700, brand:"Razer", company:"Razer", type:"Gaming",
+    description:"Razer Blade 14 is a compact yet powerful gaming laptop with high-end graphics, a fast refresh rate display, and an ultra-slim aluminum build. Designed for serious gamers and creators, it delivers top-tier performance in a portable form. The stunning RGB keyboard and exceptional cooling make it a gaming powerhouse."
+}
