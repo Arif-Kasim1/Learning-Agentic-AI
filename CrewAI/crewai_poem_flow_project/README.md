@@ -59,3 +59,4 @@ Let's create wonders together with the power and simplicity of crewAI.
 # Command: Create CrewAI Poem Flow Project
 
 1.  crewai create flow project-name
+2.  uv run kickoff
