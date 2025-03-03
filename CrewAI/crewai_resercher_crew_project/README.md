@@ -54,4 +54,5 @@ For support, questions, or feedback regarding the CrewaiResercherCrewProject Cre
 Let's create wonders together with the power and simplicity of crewAI.
 
 # Commands:
+    *   crewai create crew crewai-resercher-crew-project
     *   crewai run
