@@ -52,3 +52,6 @@ For support, questions, or feedback regarding the CrewaiResercherCrewProject Cre
 - [Chat with our docs](https://chatg.pt/DWjSBZn)
 
 Let's create wonders together with the power and simplicity of crewAI.
+
+# Commands:
+    *   crewai run
