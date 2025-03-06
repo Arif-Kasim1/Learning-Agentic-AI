@@ -1,23 +1,13 @@
-from crewai import Agent, Crew, Process, Task, LLM
+from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
-from crewai.knowledge.source.text_file_knowledge_source import TextFileKnowledgeSource
-import os
-
 
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
 @CrewBase
-class CrewaiResearchAgent():
-	"""CrewaiResearchAgent crew"""
-
-	GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-	gemini_llm = LLM(
-    	model="gemini/gemini-1.5-flash",
-    	api_key=GEMINI_API_KEY,
-    	temperature=0,
-	)
+class CrewaiClaculatorAgent():
+	"""CrewaiClaculatorAgent crew"""
 
 	# Learn more about YAML configuration files here:
 	# Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
@@ -29,19 +19,9 @@ class CrewaiResearchAgent():
 	# https://docs.crewai.com/concepts/agents#agent-tools
 	@agent
 	def researcher(self) -> Agent:
-		
 		return Agent(
 			config=self.agents_config['researcher'],
-			verbose=True,
-			llm=self.gemini_llm,
-			embedder={
-				"provider": "google",
-				"config": {
-					"model": "models/text-embedding-004",
-					"api_key": self.GEMINI_API_KEY,
-				}
-			}
-			
+			verbose=True
 		)
 
 	@agent
@@ -69,26 +49,14 @@ class CrewaiResearchAgent():
 
 	@crew
 	def crew(self) -> Crew:
-		"""Creates the CrewaiResearchAgent crew"""
+		"""Creates the CrewaiClaculatorAgent crew"""
 		# To learn how to add knowledge sources to your crew, check out the documentation:
 		# https://docs.crewai.com/concepts/knowledge#what-is-knowledge
-
-		text_source = TextFileKnowledgeSource( file_paths=["user_preference.txt" ] )
-		#print("text_source.content: ", text_source.content)
-		# Add the knowledge source to the agents
 
 		return Crew(
 			agents=self.agents, # Automatically created by the @agent decorator
 			tasks=self.tasks, # Automatically created by the @task decorator
 			process=Process.sequential,
 			verbose=True,
-			knowledge_sources=[text_source],
-			embedder={
-				"provider": "google",
-				"config": {
-					"model": "models/text-embedding-004",
-					"api_key": self.GEMINI_API_KEY,
-				}
-			}
 			# process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
 		)

@@ -1,1 +1,1 @@
-IBM's 2025 durable business laptops will likely prioritize security, performance, and longevity with robust builds and long battery life.  Specific details require checking IBM's website.
+The Lenovo ThinkPad X1 costs $1400.  A 10% discount is offered, resulting in a price of $1260.

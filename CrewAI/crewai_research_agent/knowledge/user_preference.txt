@@ -34,7 +34,7 @@ ZenBook_Duo_Asus = {
 }
 
 ThinkPad_X1_Lenovo = {
-    price:1400, brand:"ThinkPad", company:"Lenovo", type:"Business",
+    price:1400, brand:"ThinkPad", company:"Lenovo", type:"Business",discount:10%
     description:"Lenovo ThinkPad X1 is a premium business laptop known for its durability, security, and powerful performance. With a robust build, outstanding keyboard, and lightweight design, it's ideal for professionals on the go. Its high-resolution display, long battery life, and ThinkShield security features ensure reliability in corporate environments."
 }
 
