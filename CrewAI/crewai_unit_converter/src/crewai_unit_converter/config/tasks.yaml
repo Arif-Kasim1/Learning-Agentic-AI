@@ -1,0 +1,14 @@
+find_conversion_formula:
+  description: >
+    Find the mathematical formula required to convert a given unit to another {user_input}.
+  expected_output: >
+    A precise formula, including variables and conversion factors, for the requested unit transformation.
+    dont do conversion by your own, just find the formula
+  agent: conversion_formula_finder
+
+perform_unit_conversion:
+  description: >
+    Convert a given value from one unit to another using the correct conversion formula {user_input}.
+  expected_output: >
+    The converted value with the correct unit based on the identified formula.
+  agent: unit_converter

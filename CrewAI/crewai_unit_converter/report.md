@@ -1,0 +1,1 @@
+1 kilometer is equal to 1000 meters.  Applying the formula: meters = kilometers * 1000,  we get: meters = 1 km * 1000 = 1000 m.  Therefore, 1 km converted to meters is 1000 m.
