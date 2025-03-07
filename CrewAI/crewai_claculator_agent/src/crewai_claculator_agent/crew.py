@@ -1,5 +1,6 @@
-from crewai import Agent, Crew, Process, Task
+from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
+import os 
 
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
@@ -8,6 +9,15 @@ from crewai.project import CrewBase, agent, crew, task
 @CrewBase
 class CrewaiClaculatorAgent():
 	"""CrewaiClaculatorAgent crew"""
+
+	GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+	gemini_llm = LLM(
+    	model="gemini/gemini-1.5-flash",
+    	api_key=GEMINI_API_KEY,
+    	temperature=0,
+	)
+
+
 
 	# Learn more about YAML configuration files here:
 	# Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
@@ -18,32 +28,80 @@ class CrewaiClaculatorAgent():
 	# If you would like to add tools to your agents, you can learn more about it here:
 	# https://docs.crewai.com/concepts/agents#agent-tools
 	@agent
-	def researcher(self) -> Agent:
+	def calculator_orchestrator_agent(self) -> Agent:
 		return Agent(
-			config=self.agents_config['researcher'],
-			verbose=True
+			config=self.agents_config['calculator_orchestrator_agent'],
+			verbose=True,
+			llm=self.gemini_llm
 		)
 
 	@agent
-	def reporting_analyst(self) -> Agent:
+	def addition_agent(self) -> Agent:
 		return Agent(
-			config=self.agents_config['reporting_analyst'],
-			verbose=True
+			config=self.agents_config['addition_agent'],
+			verbose=True,
+			llm=self.gemini_llm
 		)
+	
+	@agent
+	def subtraction_agent(self) -> Agent:
+		return Agent(
+			config=self.agents_config['subtraction_agent'],
+			verbose=True,
+			llm=self.gemini_llm
+		)
+
+	@agent
+	def multiplication_agent(self) -> Agent:
+		return Agent(
+			config=self.agents_config['multiplication_agent'],
+			verbose=True,
+			llm=self.gemini_llm
+		)
+	
+	@agent
+	def division_agent(self) -> Agent:
+		return Agent(
+			config=self.agents_config['division_agent'],
+			verbose=True,
+			llm=self.gemini_llm
+		)
+	
 
 	# To learn more about structured task outputs, 
 	# task dependencies, and task callbacks, check out the documentation:
 	# https://docs.crewai.com/concepts/tasks#overview-of-a-task
 	@task
-	def research_task(self) -> Task:
+	def calculator_orchestrator_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['research_task'],
+			config=self.tasks_config['orchestrate_calculation'],
 		)
 
 	@task
-	def reporting_task(self) -> Task:
+	def addition_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['reporting_task'],
+			config=self.tasks_config['perform_addition'],
+			output_file='report.md'
+		)
+
+	@task
+	def subtraction_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['perform_subtraction'],
+			output_file='report.md'
+		)
+	
+	@task
+	def multiplication_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['perform_multiplication'],
+			output_file='report.md'
+		)
+
+	@task
+	def division_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['perform_division'],
 			output_file='report.md'
 		)
 
@@ -56,7 +114,8 @@ class CrewaiClaculatorAgent():
 		return Crew(
 			agents=self.agents, # Automatically created by the @agent decorator
 			tasks=self.tasks, # Automatically created by the @task decorator
-			process=Process.sequential,
+			#process=Process.sequential,
+			
 			verbose=True,
 			# process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
 		)
