@@ -29,7 +29,8 @@ def run():
     }
     
     try:
-        CrewaiUnitConverter().crew().kickoff(inputs=inputs)
+        result = CrewaiUnitConverter().crew().kickoff(inputs=inputs)
+        print("\n\nCrewaiUnitConverter -> result = ", result.raw)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 

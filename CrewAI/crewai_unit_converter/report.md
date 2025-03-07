@@ -1,1 +1,11 @@
-1 kilometer is equal to 1000 meters.  Applying the formula: meters = kilometers * 1000,  we get: meters = 1 km * 1000 = 1000 m.  Therefore, 1 km converted to meters is 1000 m.
+To convert 100 kmph to mph, we use the formula:
+
+mph = kmph * (1 mile / 1.60934 kilometers)
+
+Substituting kmph = 100:
+
+mph = 100 kmph * (1 mile / 1.60934 kilometers) 
+mph = 100 * (1/1.60934) miles per hour
+mph ≈ 62.1371 mph
+
+Therefore, 100 kmph is approximately equal to 62.1371 mph.
