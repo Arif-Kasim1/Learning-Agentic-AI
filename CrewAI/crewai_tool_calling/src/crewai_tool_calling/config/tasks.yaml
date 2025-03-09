@@ -1,0 +1,8 @@
+research_task:
+  description: >
+    fatch the information about the {topic}
+     
+  expected_output: >
+    get the weather report {topic}
+  agent: researcher
+

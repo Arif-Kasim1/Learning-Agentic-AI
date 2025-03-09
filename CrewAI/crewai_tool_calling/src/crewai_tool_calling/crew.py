@@ -1,16 +1,14 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
-import os
+from crewai_tool_calling.tools.weather_tool import weather_tool  
 
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
-
-
 @CrewBase
-class CrewaiUnitConverter():
-	"""CrewaiUnitConverter crew"""
+class CrewaiToolCalling():
+	"""CrewaiToolCalling crew"""
 
 	# Learn more about YAML configuration files here:
 	# Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
@@ -21,38 +19,27 @@ class CrewaiUnitConverter():
 	# If you would like to add tools to your agents, you can learn more about it here:
 	# https://docs.crewai.com/concepts/agents#agent-tools
 	@agent
-	def conversion_formula_finder(self) -> Agent:
+	def researcher(self) -> Agent:
 		return Agent(
-			config=self.agents_config['conversion_formula_finder'],
-			verbose=True
+			config=self.agents_config['researcher'],
+			verbose=True,
+			tools=[weather_tool]
 		)
 
-	@agent
-	def unit_converter(self) -> Agent:
-		return Agent(
-			config=self.agents_config['unit_converter'],
-			verbose=True
-		)
-
+	
 	# To learn more about structured task outputs, 
 	# task dependencies, and task callbacks, check out the documentation:
 	# https://docs.crewai.com/concepts/tasks#overview-of-a-task
 	@task
 	def research_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['find_conversion_formula'],
+			config=self.tasks_config['research_task'],
 		)
 
-	@task
-	def reporting_task(self) -> Task:
-		return Task(
-			config=self.tasks_config['perform_unit_conversion'],
-			output_file='report.md'
-		)
-
+	
 	@crew
 	def crew(self) -> Crew:
-		"""Creates the CrewaiUnitConverter crew"""
+		"""Creates the CrewaiToolCalling crew"""
 		# To learn how to add knowledge sources to your crew, check out the documentation:
 		# https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 

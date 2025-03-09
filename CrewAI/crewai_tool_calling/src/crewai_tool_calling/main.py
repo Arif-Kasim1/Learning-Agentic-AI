@@ -4,11 +4,9 @@ import warnings
 
 from datetime import datetime
 
-from crewai_unit_converter.crew import CrewaiUnitConverter
+from crewai_tool_calling.crew import CrewaiToolCalling
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
-
-
 
 # This main file is intended to be a way for you to run your
 # crew locally, so refrain from adding unnecessary logic into this file.
@@ -19,21 +17,15 @@ def run():
     """
     Run the crew.
     """
-    user_input = sys.argv[1] if len(sys.argv) > 1 else None
-    print(f"User input: {user_input}")  # This is just an example, you can remove this line
-
-  
-    user_input = input("Enter NLP for unit Conversion: ") if user_input is None else user_input
 
 
-    inputs = {         
-        'user_input': user_input,
+    inputs = {
+        'topic': 'what is the weather in New York?',
+         
     }
     
     try:
-        result = CrewaiUnitConverter().crew().kickoff(inputs=inputs)
-        print("\n\nCrewaiUnitConverter -> result = ", result.raw)
+        CrewaiToolCalling().crew().kickoff(inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
-
 

@@ -1,0 +1,17 @@
+manager_agent_task:
+  description: >
+    Evaluate incoming sales inquiries and delegate them to the appropriate Sales Agent. {user_query}. Dont do any search on web
+    or knowledge base for this task by yourown, just delegate it to the right agent and get response from him and return the
+    result in JSON format
+  expected_output: >
+    Sales tasks are assigned to the most suitable Sales Agent based on workload and expertise.
+  agent: manager_agent
+
+sales_inquiry_agent_task:
+  description: >
+    Respond to customer inquiries, provide product details, and address concerns effectively. {user_query} 
+  expected_output: >
+    Customer inquiries are resolved satisfactorily, leading to better engagement and potential sales. {user_query} return 
+    the result in JSON format.
+  agent: sales_inquiry_agent
+
