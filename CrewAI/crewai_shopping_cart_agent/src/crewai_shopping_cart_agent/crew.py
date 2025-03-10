@@ -2,6 +2,7 @@ from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
 from crewai.knowledge.source.text_file_knowledge_source import TextFileKnowledgeSource
 import os
+from crewai_shopping_cart_agent.tools.shopping_cart_tools import get_inventory_data
 
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
@@ -37,9 +38,10 @@ class CrewaiShoppingCartAgent():
 	# https://docs.crewai.com/concepts/agents#agent-tools
 	@agent
 	def manager_agent(self) -> Agent:
+		
 		return Agent(
 			config=self.agents_config['manager_agent'],
-			verbose=True,
+			verbose=False,
 			max_rpm=2,
 			max_iter=2,
 			allow_delegation=True,
@@ -48,16 +50,44 @@ class CrewaiShoppingCartAgent():
 		)
 
 	@agent
-	def sales_inquiry_agent(self) -> Agent:
+	def customer_relationship_agent(self) -> Agent:
+		
 		return Agent(
-			config=self.agents_config['sales_inquiry_agent'],
-			verbose=True,
+			config=self.agents_config['customer_relationship_agent'],
+			verbose=False,
 			llm=self.gemini_llm,
 			embedder=self.gemini_embedder_config, # adding embeder to the agent to get the context of the user query and 
 												  # provide the answer in JSON format from knowledge base
 			max_rpm=2,
 			max_iter=2,
 			
+		)
+	
+	@agent
+	def knowledge_rag_agent(self) -> Agent:
+		
+		return Agent(
+			config=self.agents_config['knowledge_rag_agent'],
+			verbose=False,
+			llm=self.gemini_llm,
+			embedder=self.gemini_embedder_config, # adding embeder to the agent to get the context of the user query and 
+												  # provide the answer in JSON format from knowledge base
+			max_rpm=2,
+			max_iter=2,
+			
+		)
+	
+
+	
+	@agent
+	def inventory_agent(self) -> Agent:
+			
+		return Agent(
+			config=self.agents_config['inventory_agent'],
+			verbose=False,
+			max_rpm=2,
+			max_iter=2,
+			tools=[get_inventory_data],
 		)
 
 	# To learn more about structured task outputs, 
@@ -70,10 +100,24 @@ class CrewaiShoppingCartAgent():
 		)
 
 	@task
-	def sales_inquiry_agent_task(self) -> Task:
+	def customer_relationship_agent_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['sales_inquiry_agent_task'],
+			config=self.tasks_config['customer_relationship_agent_task'],
 			output_file='report.md'
+		)
+	
+	@task
+	def knowledge_rag_agent_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['knowledge_rag_agent_task'],
+			output_file='report.md'
+		)
+	
+	@task
+	def inventory_agent_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['inventory_agent_task'],
+			output_file='inventory_report.md'
 		)
 
 	@crew
@@ -82,14 +126,14 @@ class CrewaiShoppingCartAgent():
 		# To learn how to add knowledge sources to your crew, check out the documentation:
 		# https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 
-		text_source = TextFileKnowledgeSource( file_paths=["laptop_dataset.txt"] )
-		print("text_source.content: ", text_source.content)
+		text_source = TextFileKnowledgeSource( file_paths=["inventory_rag_data.txt"] )
+		#print("text_source.content: ", text_source.content)
 
 		return Crew(
 			agents=self.agents, # Automatically created by the @agent decorator
 			tasks=self.tasks, # Automatically created by the @task decorator
 			#process=Process.sequential,
-			verbose=True,
+			verbose=False,
 			process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
 			#manager_agent=self.manager_agent,
 			manager_llm=self.gemini_llm,

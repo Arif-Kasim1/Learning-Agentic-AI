@@ -1,17 +1,34 @@
 manager_agent_task:
   description: >
-    Evaluate incoming sales inquiries and delegate them to the appropriate Sales Agent. {user_query}. Dont do any search on web
-    or knowledge base for this task by yourown, just delegate it to the right agent and get response from him and return the
-    result in JSON format
+    Evaluate incoming sales inquiries and delegate them to the appropriate  Agent. {user_query}. Dont do any search on web
+    or knowledge base for this task by yourown, just delegate it to the right agent and get response from him 
   expected_output: >
-    Sales tasks are assigned to the most suitable Sales Agent based on workload and expertise.
+    tasks are assigned to the most suitable  Agent based on workload and expertise. {user_query} .
   agent: manager_agent
 
-sales_inquiry_agent_task:
+customer_relationship_agent_task:
   description: >
-    Respond to customer inquiries, provide product details, and address concerns effectively. {user_query} 
+    Respond to customer by searching the data in knowledge RAG {user_query} 
   expected_output: >
-    Customer inquiries are resolved satisfactorily, leading to better engagement and potential sales. {user_query} return 
-    the result in JSON format.
-  agent: sales_inquiry_agent
+    Respond to customer by searching the data in knowledge RAG {user_query}  dont use any external source for this task dont use
+    any tools for this task
+  agent: customer_relationship_agent
+
+knowledge_rag_agent_task:
+  description: >
+    Fatch the  data from knowledge RAG {user_query}
+  expected_output: >
+    Fatch the   data from knowledge RAG {user_query}  dont use any external source for this task dont use
+    any tools for this task
+  agent: knowledge_rag_agent
+
+inventory_agent_task:
+  description: >
+    Retrieve product inventory data   {user_query} by using tool 
+    provided to you. Dont do any search on web or knowledge base for this task by yourown, just retrieve the inventory data using provided tool
+    and return the result in JSON format
+  expected_output: >
+    Product inventory detail   {user_query} 
+    return the result in JSON format.
+  agent: inventory_agent
 

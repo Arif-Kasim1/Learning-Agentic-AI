@@ -1,74 +1,83 @@
+then parse the " \
+        "JSON object to get the product_id, then delegate this task to inventory_agent to get the inventory data by product_id and return" \
+        "the inventory data in JSON format, combine both JSON objects response from sales_agent and inventory_agent and return the final JSON object to the user"
+----------------------------
+
+
 P15v_Lenovo = {
-    id: "LAP001", brand:"ThinkPad", company:"Lenovo", type:"Workstation",
+    product_id: "LAP001", brand:"ThinkPad", company:"Lenovo", type:"Workstation",
     description:"The Lenovo ThinkPad P15v is a powerful workstation designed for professionals. Equipped with high-performance processors, ample RAM, and a durable chassis, it ensures seamless multitasking and reliability. Its robust build, excellent keyboard, and security features make it ideal for engineers, developers, and business users needing top-tier performance."
 }
 
 XPS_15_Dell = {
-    id: "LAP002", brand:"XPS", company:"Dell", type:"Ultrabook",
+    product_id: "LAP002", brand:"XPS", company:"Dell", type:"Ultrabook",
     description:"Dell XPS 15 is a premium ultrabook with a stunning InfinityEdge display, powerful Intel Core processors, and dedicated NVIDIA graphics. Designed for creatives and professionals, it delivers top-tier performance in a sleek aluminum body. The exceptional display, battery life, and high-end build quality make it a productivity powerhouse."
 }
 
 MacBook_Air_Apple = {
-    id: "LAP003", brand:"MacBook", company:"Apple", type:"Ultrabook",
+    product_id: "LAP003", brand:"MacBook", company:"Apple", type:"Ultrabook",
     description:"Apple's MacBook Air is an ultrathin, lightweight laptop powered by the M-series chip. With exceptional battery life, a Retina display, and a fanless design, it provides quiet yet powerful performance. Ideal for students and professionals, it excels in everyday tasks, video editing, and programming, with seamless macOS integration."
 }
 
 ROG_Strix_Asus = {
-    id: "LAP004", brand:"ROG", company:"Asus", type:"Gaming",
+    product_id: "LAP004", brand:"ROG", company:"Asus", type:"Gaming",
     description:"Asus ROG Strix is a high-performance gaming laptop with a powerful GPU, high-refresh-rate display, and advanced cooling. Designed for serious gamers, it ensures smooth gameplay with minimal lag. The RGB keyboard, bold aesthetics, and superior thermals make it an excellent choice for esports and AAA gaming experiences."
 }
 
 Yoga_9i_Lenovo = {
-    id: "LAP005", brand:"Yoga", company:"Lenovo", type:"Convertible",
+    product_id: "LAP005", brand:"Yoga", company:"Lenovo", type:"Convertible",
     description:"Lenovo Yoga 9i is a premium convertible laptop with a sleek, flexible design. Featuring a high-resolution touchscreen, stylus support, and powerful hardware, it's perfect for creatives and professionals. With its 360-degree hinge, long battery life, and premium speakers, it delivers a versatile experience for both work and entertainment."
 }
 
 Inspiron_16_Dell = {
-    id: "LAP006", brand:"Inspiron", company:"Dell", type:"Business",
+    product_id: "LAP006", brand:"Inspiron", company:"Dell", type:"Business",
     description:"Dell Inspiron 16 is a reliable business laptop with a large display, solid battery life, and strong performance. Featuring the latest Intel processors and ample storage, it is perfect for multitasking professionals. With a comfortable keyboard, sturdy design, and impressive connectivity, it enhances productivity in any work setting."
 }
 
 Predator_Helios_Acer = {
-    id: "LAP007", brand:"Predator", company:"Acer", type:"Gaming",
+    product_id: "LAP007", brand:"Predator", company:"Acer", type:"Gaming",
     description:"Acer Predator Helios is a gaming powerhouse with high-end graphics, a fast refresh rate, and advanced cooling. Built for intense gaming, it offers superior performance, immersive visuals, and customizable RGB lighting. Gamers will appreciate its overclocking capabilities and robust thermal management for extended gaming sessions."
 }
 
 Surface_Laptop_Studio_Microsoft = {
-    id: "LAP008", brand:"Surface", company:"Microsoft", type:"Convertible",
+    product_id: "LAP008", brand:"Surface", company:"Microsoft", type:"Convertible",
     description:"Microsoft Surface Laptop Studio is a versatile, high-performance laptop with a unique hinge design for multiple usage modes. Equipped with a vibrant touchscreen, powerful hardware, and Surface Pen support, it's ideal for artists, designers, and developers. Its premium build and innovative design set it apart in the convertible laptop space."
 }
 
 Swift_5_Acer = {
-    id: "LAP009", brand:"Swift", company:"Acer", type:"Ultrabook",
+    product_id: "LAP009", brand:"Swift", company:"Acer", type:"Ultrabook",
     description:"Acer Swift 5 is an ultra-lightweight ultrabook with a sleek magnesium-aluminum chassis, long battery life, and a powerful processor. Designed for on-the-go professionals, it delivers top-tier performance while maintaining portability. The bright touchscreen, fast SSD, and premium aesthetics make it an excellent choice for students and business users alike."
 }
 
 Gram_17_LG = {
-    id: "LAP010", brand:"Gram", company:"LG", type:"Ultrabook",
+    product_id: "LAP010", brand:"Gram", company:"LG", type:"Ultrabook",
     description:"LG Gram 17 is an ultra-light yet powerful laptop with a large 17-inch display and long battery life. It features a durable, lightweight magnesium body, high-resolution screen, and powerful performance for multitasking. Ideal for professionals who need a large-screen laptop without sacrificing portability."
 }
 
 Omen_16_HP = {
-    id: "LAP011", brand:"Omen", company:"HP", type:"Gaming",
+    product_id: "LAP011", brand:"Omen", company:"HP", type:"Gaming",
     description:"HP Omen 16 is a high-performance gaming laptop with powerful AMD or Intel processors, high-refresh-rate display, and customizable RGB keyboard. Designed for immersive gaming, it offers excellent cooling, high-end graphics, and a sleek design, making it perfect for competitive gamers and content creators alike."
 }
 
 EliteBook_840_HP = {
-    id: "LAP012", brand:"EliteBook", company:"HP", type:"Business",
+    product_id: "LAP012", brand:"EliteBook", company:"HP", type:"Business",
     description:"HP EliteBook 840 is a premium business laptop with enterprise-grade security, solid build quality, and strong battery life. Featuring a bright display, comfortable keyboard, and high-speed performance, it's designed for professionals who need a reliable and secure laptop for work and travel."
 }
 
 TUF_Gaming_F15_Asus = {
-    id: "LAP013", brand:"TUF", company:"Asus", type:"Gaming",
+    product_id: "LAP013", brand:"TUF", company:"Asus", type:"Gaming",
     description:"Asus TUF Gaming F15 is a budget-friendly gaming laptop with powerful hardware, a high-refresh-rate display, and military-grade durability. It’s designed for gamers looking for reliable performance at an affordable price, featuring strong thermals, a customizable keyboard, and solid battery life."
 }
 
 ZenBook_14_Asus = {
-    id: "LAP014", brand:"ZenBook", company:"Asus", type:"Ultrabook",
+    product_id: "LAP014", brand:"ZenBook", company:"Asus", type:"Ultrabook",
     description:"Asus ZenBook 14 is a compact, ultra-portable laptop with a beautiful OLED display, premium design, and powerful internals. Featuring a long-lasting battery, fast storage, and AI-powered noise cancellation, it's perfect for professionals and students who need a sleek yet powerful machine."
 }
 
 Latitude_7420_Dell = {
-    id: "LAP015", brand:"Latitude", company:"Dell", type:"Business",
+    product_id: "LAP015", brand:"Latitude", company:"Dell", type:"Business",
     description:"Dell Latitude 7420 is a professional business laptop with strong security features, a lightweight design, and all-day battery life. Built for productivity, it features a high-quality display, comfortable keyboard, and enterprise-level performance, making it ideal for remote work and corporate environments."
 }
+
+
+-----------------------------------
