@@ -1,2 +1,3 @@
-{"product_id": "LAP001", "model_name": "X1 Pro", "company": "TechNova", "brand": "NovaTech", "type": "Gaming Laptop", "description": "The NovaTech X1 Pro is a high-performance gaming laptop featuring a powerful processor, fast SSD, and a high-refresh-rate display. Designed for gamers and power users, it delivers stunning graphics, smooth gameplay, and excellent cooling efficiency.", "quantity": 43, "price": 800, "discount": 5}
+```json
+{"product_id": "LAP012", "model_name": "Creator X20", "company": "Visionary Tech", "brand": "Creator", "type": "Content Creation Laptop", "description": "The Creator X20 is a powerhouse laptop designed for creative professionals. It features a color-accurate 4K display, powerful CPU and GPU, and ample storage, making it perfect for video editing, 3D rendering, and design.", "quantity": 12, "price": 2000, "discount": 10}
 ```

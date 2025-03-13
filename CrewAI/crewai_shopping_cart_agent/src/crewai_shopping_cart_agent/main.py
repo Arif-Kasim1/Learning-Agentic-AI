@@ -71,7 +71,7 @@ class OnlineShoppingFlow(Flow[OnlineShoppingState]):
         " and answer in JSON format " \
          
         #input("what type of laptop are you looking for?", "i would like to buy lenovo p15v workstation")
-        user_query = "NovaTech X1 Pro high-performance gaming laptop"
+        user_query = "NovaTech X1 Pro, gaming laptop by TechNova"
 
         print("Calling the CrewaiShoppingCartAgent with query = ", prefix+user_query)
         result = (

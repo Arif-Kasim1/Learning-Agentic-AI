@@ -1,2 +1,6 @@
-{"product_id": "LAP001", "model_name": "X1 Pro", "company": "TechNova", "brand": "NovaTech", "type": "Gaming Laptop", "description": "The NovaTech X1 Pro is a high-performance gaming laptop featuring a powerful processor, fast SSD, and a high-refresh-rate display. Designed for gamers and power users, it delivers stunning graphics, smooth gameplay, and excellent cooling efficiency.", "quantity": 43, "price": 800, "discount": 5}
+```json
+{
+  "error": "No product with model name 'Creator X20' found in the provided data."
+}
+```
 ```

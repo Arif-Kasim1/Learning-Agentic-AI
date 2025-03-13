@@ -24,7 +24,7 @@ knowledge_rag_agent_task:
 
 inventory_agent_task:
   description: >
-    Retrieve product inventory data   {user_query} by using tool 
+    Retrieve product inventory data  {user_query} by using tool 
     provided to you. Dont do any search on web or knowledge base for this task by yourown, just retrieve the inventory data using provided tool
     and return the result in JSON format
   expected_output: >
