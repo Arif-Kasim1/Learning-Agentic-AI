@@ -2,9 +2,9 @@ product_finder_agent:
   role: >
     Product Finder Agent
   goal: >
-    Find the product detail from Knowledge {user_query}
+    Find the product detail  {user_query}
   backstory: >
-    You are expert in searching from Knowledge system to find the related data.  
+    find the related data.  
 
 
 check_out_agent:

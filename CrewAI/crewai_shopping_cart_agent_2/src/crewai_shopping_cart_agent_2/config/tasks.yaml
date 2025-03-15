@@ -1,14 +1,16 @@
-# manager_agent_task:
-#   description: >
-#     Evaluate incoming inquiries and delegate them to the appropriate  Agent. {user_query}. Dont do any search on web
-#     or knowledge base for this task by your own, do not think of your own, just delegate it to the right agent and get response from him 
-#   expected_output: >
-#     tasks are assigned to the most suitable  Agent. {user_query} .
-#   agent: manager_agent
-
 product_finder_agent_task:
   description: >
-    Fatch the data from knowledge RAG {user_query}
+     {user_query}
   expected_output: >
-    Fatch the  data from knowledge RAG {user_query}, dont think of your own, dont search on web.
+    Fatch the  data from knowledge  {user_query}, return the result in printable format like:\\n1: [product_id=product_id,model_name, company,
+    brand, type, price and discount] always use this format to reply. dont think of your own, dont search on web.
   agent: product_finder_agent
+
+check_out_agent_task:
+  description: >
+    {user_query}
+  expected_output: >
+     {user_query} .
+     dont think of your own, dont search on web. 
+  agent: check_out_agent
+

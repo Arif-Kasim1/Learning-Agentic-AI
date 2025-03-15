@@ -1,0 +1,1 @@
+Based on the available data, the NovaTech X1 Pro high-performance gaming laptop (product ID LAP001) is priced at $800 (with a 5% discount).  However, detailed specifications (processor, RAM, storage, graphics card), customer reviews, and purchase locations are unavailable from the current data source.  Further research is needed to obtain this information.

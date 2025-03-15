@@ -135,7 +135,7 @@ class CrewaiShoppingCartAgent():
 			#process=Process.sequential,
 			verbose=False,
 			process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
-			manager_agent=self.manager_agent,
+			#manager_agent=self.manager_agent,
 			manager_llm=self.gemini_llm,
 			knowledge_sources=[text_source],
 			embedder=self.gemini_embedder_config,

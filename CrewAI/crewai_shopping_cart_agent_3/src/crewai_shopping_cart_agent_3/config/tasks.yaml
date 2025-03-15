@@ -1,0 +1,15 @@
+product_finder_agent_task:
+  description: >
+      {user_query}
+  expected_output: >
+      {user_query}  dont think of your own, dont search on web.
+  agent: product_finder_agent
+
+check_out_agent_task:
+  description: >
+     {user_query}
+  expected_output: >
+     {user_query} .
+     dont think of your own, dont search on web. 
+  agent: check_out_agent
+

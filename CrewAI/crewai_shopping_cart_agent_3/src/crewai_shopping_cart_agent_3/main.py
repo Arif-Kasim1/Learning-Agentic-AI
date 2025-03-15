@@ -2,13 +2,13 @@
 import sys
 import warnings
 import json
-from crewai_shopping_cart_agent_2.util.utility import create_product_dict
-from crewai_shopping_cart_agent_2.util.utility import get_line_by_number
+from crewai_shopping_cart_agent_3.util.utility import create_product_dict
+from crewai_shopping_cart_agent_3.util.utility import get_line_by_number
 
 from datetime import datetime
 from crewai.flow import Flow, listen, start, router
 from pydantic import BaseModel
-from crewai_shopping_cart_agent_2.crew import CrewaiShoppingCartAgent2
+from crewai_shopping_cart_agent_3.crew import CrewaiShoppingCartAgent3
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -27,7 +27,7 @@ def run():
     }
     
     try:
-        CrewaiShoppingCartAgent2().crew().kickoff(inputs=inputs)
+        CrewaiShoppingCartAgent3().crew().kickoff(inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 
@@ -43,12 +43,12 @@ class OnlineShoppingFlow(Flow[OnlineShoppingState]):
     def start_shopping_experiance(self):
         print("start_shopping_experiance")
 
-        prefix = """Agent=Product Finder Agent, find the same product and 3 other similer product like this,  
+        prefix = """delegate task to Product Finder Agent,  
         """
         user_query = " NovaTech X1 Pro high-performance gaming laptop "
 
         result = (
-            CrewaiShoppingCartAgent2()
+            CrewaiShoppingCartAgent3()
             .crew()
             .kickoff(inputs={"user_query": prefix+user_query })
         )
@@ -58,8 +58,7 @@ class OnlineShoppingFlow(Flow[OnlineShoppingState]):
          
         self.state.best_match['product_detail'] = product_detail
 
-
-        
+       
     @router(start_shopping_experiance)
     def customer_decision(self):
         print("customer_decision")
@@ -98,11 +97,6 @@ class OnlineShoppingFlow(Flow[OnlineShoppingState]):
         # print("customer_check_out: result.raw = ", result.raw)
 
        
-
-
-
-
-
 
 
 def kickoff():
