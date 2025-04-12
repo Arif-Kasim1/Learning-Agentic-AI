@@ -1,0 +1,17 @@
+[project]
+name = "llm-as-a-judge"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Arif-Kasim", email = "arif.rozani@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+llm-as-a-judge = "llm_as_a_judge:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

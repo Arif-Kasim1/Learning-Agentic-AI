@@ -1,0 +1,17 @@
+[project]
+name = "story-writer-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Arif-Kasim", email = "arif.rozani@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+story-writer-agent = "story_writer_agent:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
