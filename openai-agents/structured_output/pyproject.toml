@@ -1,0 +1,19 @@
+[project]
+name = "structured-output"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Arif-Kasim", email = "arif.rozani@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.11.3",
+]
+
+[project.scripts]
+structured-output = "structured_output:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
